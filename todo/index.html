@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ultimate To-Do List</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #333;
+      --task-bg: #f7f7f7;
+      --shadow: rgba(0,0,0,0.2);
+      --completed: #d4edda;
+      --completed-text: #155724;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1f1f2f;
+      --text: #e0e0e0;
+      --task-bg: #2e2e3e;
+      --shadow: rgba(255,255,255,0.1);
+      --completed: #2d5b37;
+      --completed-text: #b2f2bb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: 0.3s;
+    }
+
+    .todo-app {
+      background: var(--bg);
+      padding: 25px;
+      border-radius: 20px;
+      width: 450px;
+      max-width: 95%;
+      box-shadow: 0 10px 30px var(--shadow);
+      border: 1px solid #ccc;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .theme-toggle, .filter-section {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .input-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: var(--task-bg);
+      color: var(--text);
+    }
+
+    button.add-btn {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button.add-btn:hover {
+      background-color: #218838;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: var(--task-bg);
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    li.completed {
+      background-color: var(--completed);
+      color: var(--completed-text);
+      text-decoration: line-through;
+    }
+
+    .top-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .meta {
+      font-size: 12px;
+      margin-top: 5px;
+      opacity: 0.7;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .actions button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .done { color: green; }
+    .edit { color: orange; }
+    .delete { color: red; }
+  </style>
+</head>
+<body data-theme="light">
+
+  <div class="todo-app">
+    <h2>🧠 Ultimate To-Do List</h2>
+
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()">🌓 Toggle Theme</button>
+    </div>
+
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Task name..." />
+      <input type="date" id="dueDate" />
+      <select id="category">
+        <option value="General">📋 General</option>
+        <option value="Work">💼 Work</option>
+        <option value="Study">📚 Study</option>
+        <option value="Health">🏋️ Health</option>
+      </select>
+      <button class="add-btn" onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="filter-section">
+      <label for="filterSelect">Filter: </label>
+      <select id="filterSelect" onchange="renderTasks()">
+        <option value="All">🔍 All</option>
+        <option value="Today">📅 Today</option>
+        <option value="Work">💼 Work</option>
+        <option value="Study">📚 Study</option>
+        <option value="Health">🏋️ Health</option>
+        <option value="General">📋 General</option>
+        <option value="Completed">✅ Completed</option>
+      </select>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    let taskList = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    function renderTasks() {
+      const ul = document.getElementById("taskList");
+      const filter = document.getElementById("filterSelect").value;
+      const today = new Date().toISOString().slice(0, 10);
+      ul.innerHTML = "";
+
+      taskList.forEach((task, index) => {
+        let show = true;
+
+        if (filter === "Today" && task.due !== today) show = false;
+        if (["Work", "Study", "Health", "General"].includes(filter) && task.category !== filter) show = false;
+        if (filter === "Completed" && !task.completed) show = false;
+
+        if (!show) return;
+
+        const li = document.createElement("li");
+        if (task.completed) li.classList.add("completed");
+
+        const top = document.createElement("div");
+        top.className = "top-line";
+
+        const span = document.createElement("span");
+        span.textContent = task.text;
+
+        const actions = document.createElement("div");
+        actions.className = "actions";
+
+        const doneBtn = document.createElement("button");
+        doneBtn.innerHTML = "✅";
+        doneBtn.className = "done";
+        doneBtn.onclick = () => toggleComplete(index);
+
+        const editBtn = document.createElement("button");
+        editBtn.innerHTML = "✏️";
+        editBtn.className = "edit";
+        editBtn.onclick = () => editTask(index);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.innerHTML = "🗑️";
+        deleteBtn.className = "delete";
+        deleteBtn.onclick = () => deleteTask(index);
+
+        actions.appendChild(doneBtn);
+        actions.appendChild(editBtn);
+        actions.appendChild(deleteBtn);
+
+        top.appendChild(span);
+        top.appendChild(actions);
+
+        const meta = document.createElement("div");
+        meta.className = "meta";
+        meta.textContent = `📅 Due: ${task.due || 'N/A'} | 📂 ${task.category}`;
+
+        li.appendChild(top);
+        li.appendChild(meta);
+        ul.appendChild(li);
+      });
+
+      localStorage.setItem("tasks", JSON.stringify(taskList));
+    }
+
+    function addTask() {
+      const text = document.getElementById("taskInput").value.trim();
+      const due = document.getElementById("dueDate").value;
+      const category = document.getElementById("category").value;
+
+      if (!text) return alert("Task can't be empty!");
+
+      taskList.push({ text, completed: false, due, category });
+      document.getElementById("taskInput").value = "";
+      document.getElementById("dueDate").value = "";
+      document.getElementById("category").value = "General";
+      renderTasks();
+    }
+
+    function toggleComplete(index) {
+      taskList[index].completed = !taskList[index].completed;
+      renderTasks();
+    }
+
+    function deleteTask(index) {
+      if (confirm("Delete this task?")) {
+        taskList.splice(index, 1);
+        renderTasks();
+      }
+    }
+
+    function editTask(index) {
+      const newText = prompt("Edit task:", taskList[index].text);
+      if (newText && newText.trim() !== "") {
+        taskList[index].text = newText.trim();
+        renderTasks();
+      }
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const current = body.getAttribute("data-theme");
+      body.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    }
+
+    renderTasks();
+  </script>
+
+</body>
+</html>
