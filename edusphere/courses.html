@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>courses</title>
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.courses-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.courses-section h1 {
+  font-size: 2.5rem;
+  color: #007b7b;
+  margin-bottom: 40px;
+}
+
+.course-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.course-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e0f7f4;
+  padding: 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.course-text h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.course-item img {
+  width: 64px;
+  height: 64px;
+}
+
+.footer {
+  background: #e0f7f4;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+ /* Tablet & Laptop (≤1024px) */
+ @media (max-width: 1024px) {
+      .courses-section {
+        padding: 50px 15px;
+      }
+      .courses-section h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+      .course-list {
+        max-width: 90%;
+      }
+      .course-item {
+        padding: 18px;
+      }
+      .course-text h2 {
+        font-size: 1.3rem;
+      }
+      .course-item img {
+        width: 56px;
+        height: 56px;
+      }
+      .footer {
+        font-size: 0.85rem;
+        padding: 18px 0;
+      }
+    }
+
+    /* Mobile (≤600px) */
+    @media (max-width: 600px) {
+      .courses-section {
+        padding: 40px 10px;
+      }
+      .courses-section h1 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+      .course-item {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        gap: 15px;
+      }
+      .course-text h2 {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .course-item img {
+        width: 48px;
+        height: 48px;
+      }
+      .footer {
+        font-size: 0.8rem;
+        padding: 15px 0;
+      }
+    }
+</style>
+<body>
+    <section class="courses-section">
+        <h1>Courses We Provide</h1>
+        <div class="course-list">
+      
+          <a href="explore.html" class="course-item">
+            <div class="course-text">
+              <h2>Class 11 &amp; 12 PCM</h2>
+            </div>
+            <img src="pictures/coaching 1.jpg" alt="PCM Calculator Icon">
+          </a>
+      
+          <a href="jee.html" class="course-item">
+            <div class="course-text">
+              <h2>JEE Mains &amp; Advanced</h2>
+            </div>
+            <img src="pictures/jee.jpeg" alt="Atom Icon">
+          </a>
+      
+          <a href="neet.html" class="course-item">
+            <div class="course-text">
+              <h2>NEET Preparation</h2>
+            </div>
+            <img src="pictures/neet.png" alt="DNA Icon">
+          </a>
+      
+          <a href="WEBDEV.html" class="course-item">
+            <div class="course-text">
+              <h2>Web Development</h2>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/64px-HTML5_logo_and_wordmark.svg.png" alt="HTML5 Logo">
+          </a>
+      
+        </div>
+      </section>
+      
+      <footer class="footer">
+        <p>© 2025 EDUsphere. All rights reserved.</p>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JEE Scholarship Section</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Existing Scholarship Banner Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .scholarship-banner {
+      background: linear-gradient(to right, #cfceffa4, #766ed6);
+      color: rgb(250, 245, 245);
+      padding: 30px;
+      text-align: center;
+    }
+    .highlight {
+      color: rgb(30, 5, 76);
+      font-weight: bold;
+    }
+    .banner-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      text-align: left;
+    }
+    .banner-box {
+      background: rgb(255, 255, 255);
+      color: black;
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+      margin: 15px 0;
+    }
+    .scholarship-text {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .register-btn {
+      display: inline-block;
+      background: #22109a;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .register-btn:hover {
+      background: #003F7F;
+    }
+    .banner-image img {
+      width: 350px;
+      margin-top: 5px;
+    }
+    .header-text {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .edusphere-stats-section {
+      background: linear-gradient(to right, #b5dadaa4, #a1c5c6);
+      padding: 10px 0;
+      text-align: center;
+      color: rgb(36, 15, 141);
+      position: relative;
+      margin-top: 30px;
+    }
+    .edusphere-overlay {
+      
+      padding: 40px 20px;
+      border-radius: 10px;
+      margin: 0 10px;
+    }
+    .edusphere-stats-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .stat {
+      flex: 1;
+      min-width: 100px;
+    }
+    .stat h2 {
+      font-size: 3.0em;
+      margin: 0;
+    }
+    .stat p {
+      margin: 5px 0 0;
+      font-size: 1.1em;
+    }
+    /* Why Choose EDUsphere Styles */
+.why-choose-edusphere {
+  background-color: #088bc31e;
+  padding: 60px 20px;
+}
+
+.why-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.why-title span {
+  color: #16aaaf;
+}
+
+.why-cards-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.why-card h3 {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+.why-card p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+/* ========== Guiding Principles Section ========== */
+
+.guiding-principles {
+  /* 
+    You can replace the background image below
+    with your own wave or gradient.
+  */
+  background: #b4d1d3; /* fallback if the image doesn't load */
+  background-image: url("https://i.imgur.com/42d41b3.png"); /* Example wave pattern */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.guiding-principles h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.principles-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.principle-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* Smooth “lift” hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.principle-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Hover State */
+.principle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+/* ========== Notifications Section Styles ========== */
+
+.jee-notifications {
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.jee-notifications h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.notification-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 15px;
+}
+
+.notification-item {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #333;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap; 
+  text-align: center;
+}
+
+/* Hover effect: Light Blue */
+.notification-item:hover {
+  background-color: #82b0b1;  /* Light blue */
+  border-color: #a1daff;      /* Slightly darker border */
+}
+
+.jee-eligibility-section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.jee-eligibility-section h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.jee-eligibility-section p {
+  margin-bottom: 1rem;
+}
+
+.jee-eligibility-section a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.jee-eligibility-section a:hover {
+  text-decoration: underline;
+}
+
+.jee-eligibility-section h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.eligibility-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.eligibility-table th,
+.eligibility-table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.eligibility-table th {
+  background-color: #a2d6dc;
+  font-weight: bold;
+}
+/* ========== JEE 2025 Syllabus Section Styles ========== */
+.jee-syllabus-section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.jee-syllabus-section h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.jee-syllabus-section h2 {
+  font-size: 1.6rem;
+  margin: 2rem 0 1rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.table-wrapper {
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.syllabus-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.syllabus-table th,
+.syllabus-table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.syllabus-table th {
+  background-color: #a3cbd5;
+  font-weight: bold;
+}
+.exam-dates {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.exam-dates h2,
+.exam-dates h3 {
+  color: #1e1e1e;
+  margin-bottom: 0.5rem;
+}
+
+.exam-dates p {
+  margin-bottom: 1.5rem;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.narrow-table {
+  width: 90%;
+  max-width: 700px;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.narrow-table th,
+.narrow-table td {
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.narrow-table thead th {
+  background-color: #c2f0f0;
+  font-weight: bold;
+}
+
+.narrow-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.exam-dates h2,
+.exam-dates h3 {
+  color: #1e1e1e;
+  margin-bottom: 0.5rem;
+  text-align: center; /* Center the headings */
+}
+.jee-preparation-tips {
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.jee-preparation-tips h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #1e1e1e;
+}
+
+.jee-preparation-tips p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.jee-preparation-tips ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: #1a1a1a;
+}
+
+.jee-preparation-tips ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.jee-preparation-tips ul li strong {
+  font-weight: bold;
+}
+.jee-pyq-section {
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.jee-pyq-section h2 {
+  text-align: center;
+  font-size: 1.6rem; /* Reduced size */
+  margin-bottom: 2rem;
+  font-weight: 500; /* Medium-normal */
+  color: #017a9b; /* Sea blue dark */
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem; /* Increased spacing to prevent overlap */
+  justify-items: center;
+  margin-bottom: 3rem;
+}
+
+.pdf-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pdf-link:hover {
+  background-color: #d4e9ff; /* Lightish blue hover */
+  color: #017a9b;
+  border-color: #017a9b;
+}
+.jee-intro-section {
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.8;
+}
+ /* Responsive: Tablet & Laptop ≤1024px */
+ @media (max-width: 1024px) {
+      .banner-content { flex-direction: column; text-align: center; }
+      .banner-image img { width: 300px; margin: 20px 0; }
+      .edusphere-stats-container { flex-direction: column; gap: 20px; }
+      .why-cards-container, .principles-container { flex-direction: column; align-items: center; }
+      .notification-container { grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); }
+      table, th, td { font-size: 0.9rem; }
+      .jee-eligibility-section, .jee-syllabus-section, .exam-dates, .jee-preparation-tips, .jee-pyq-section { padding: 0 10px; }
+    }
+    /* Responsive: Mobile ≤600px */
+    @media (max-width: 600px) {
+      .banner-content { padding: 10px; }
+      .banner-box { width: 100%; }
+      .banner-image img { width: 100%; height: auto; }
+      .edusphere-stats-container { flex-direction: column; }
+      .stat h2 { font-size: 2.5em; }
+      .why-card, .principle-card { width: 90%; max-width: 300px; margin: 0 auto; }
+      .notification-container { grid-template-columns: 1fr; }
+      table, th, td { font-size: 0.8rem; padding: 0.5rem; }
+      .jee-eligibility-section, .jee-syllabus-section, .exam-dates, .jee-preparation-tips, .jee-pyq-section { padding: 0 5px; }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Existing Scholarship Banner Section -->
+  <section class="scholarship-banner">
+    <h2 class="header-text">Delivering consistent results for <span class="highlight">20+ Years</span></h2>
+    <div class="banner-content">
+      <div class="banner-box">
+        <p class="jee-text">JEE Aspirant?</p>
+        <p class="scholarship-text">Apply here for getting <span class="highlight">100% Scholarship</span></p>
+        <a href="register.html" class="register-btn">REGISTER NOW</a>
+      </div>
+      <div class="banner-image">
+        <img src="/pictures/student studying.jpg" alt="Student Studying">
+      </div>
+    </div>
+  </section>
+
+  <!-- New EDUsphere Stats Section -->
+  <section class="edusphere-stats-section">
+    <div class="edusphere-overlay">
+      <div class="edusphere-stats-container">
+        <div class="stat">
+          <h2>20+</h2>
+          <p>Years of<br>Experience</p>
+        </div>
+        <div class="stat">
+          <h2>30+</h2>
+          <p>Centers<br>Across India</p>
+        </div>
+        <div class="stat">
+          <h2>93.5K+</h2>
+          <p>Rankers<br>in JEE</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <!-- Why Choose EDUsphere Section -->
+<section class="why-choose-edusphere">
+  <h2 class="why-title">Why Choose <span>EDUsphere?</span></h2>
+  <div class="why-cards-container">
+    <!-- Card 1 -->
+    <div class="why-card">
+      <img src="https://img.icons8.com/color/48/000000/certificate.png" alt="Qualified Faculty" />
+      <h3>Highly Qualified & Experienced Faculty</h3>
+      <p>EDUsphere has a vast pool of highly qualified teachers from top IITs, NITs, and reputed universities with strong coaching experience.</p>
+    </div>
+    <!-- Card 2 -->
+    <div class="why-card">
+      <img src="https://img.icons8.com/color/48/000000/combo-chart--v1.png" alt="Track Record" />
+      <h3>Excellent Track Record</h3>
+      <p>With 20+ years of results in competitive exams like JEE, NEET, NTSE, and Olympiads, we consistently help students achieve their dreams.</p>
+    </div>
+    <!-- Card 3 -->
+    <div class="why-card">
+      <img src="https://img.icons8.com/color/48/000000/open-book--v1.png" alt="Study Material" />
+      <h3>Comprehensive Study Material</h3>
+      <p>Our expertly curated material provides deep understanding and is regularly updated to keep students ahead of the curve.</p>
+    </div>
+    <!-- Card 4 -->
+    <div class="why-card">
+      <img src="https://img.icons8.com/color/48/000000/teacher.png" alt="Integrated Teaching" />
+      <h3>Integrated Teaching</h3>
+      <p>Our integrated approach ensures students perform well in school and shine in exams like JEE, NEET, Olympiads, and more.</p>
+    </div>
+  </div>
+</section>
+<!-- Guiding Principles Section -->
+<section class="guiding-principles">
+  <h2>Our Guiding Principles</h2>
+  <div class="principles-container">
+    <!-- Principle 1 -->
+    <div class="principle-card">
+      <h3>Student first, always!</h3>
+    </div>
+
+    <!-- Principle 2 -->
+    <div class="principle-card">
+      <h3>Hardwork</h3>
+    </div>
+
+    <!-- Principle 3 -->
+    <div class="principle-card">
+      <h3>Accountability</h3>
+    </div>
+
+    <!-- Principle 4 -->
+    <div class="principle-card">
+      <h3>Passion for education</h3>
+    </div>
+  </div>
+</section>
+<!-- Notifications Section -->
+<section class="jee-notifications">
+  <h2>Notifications</h2>
+  <div class="notification-container">
+    <div class="notification-item">JEE Advanced 2024 Admit Card Released by IIT Guwahati</div>
+    <div class="notification-item">JEE Advanced 2024 Registration Begins</div>
+    <div class="notification-item">JEE Main 2024 Session 2 Results Declared by NTA</div>
+    <div class="notification-item">JEE Main 2024 Session 2 Answer Key Released</div>
+    <div class="notification-item">JEE Main 2024 Session 2 Admit Card Released</div>
+    <div class="notification-item">JEE Main 2024 Session 2 Online Registration Started</div>
+    <div class="notification-item">JEE Main 2024 Session 1 Results Declared</div>
+    <div class="notification-item">JEE Main 2024 Exam Schedule Released by IIT Guwahati</div>
+    <div class="notification-item">JEE Main 2024 Registration Begins for Session 1</div>
+    <div class="notification-item">JEE Main 2024 Exam Dates Are Announced by NTA</div>
+  </div>
+</section>
+<!-- Combined JEE 2025 Exam Eligibility Criteria Section -->
+<section class="jee-eligibility-section">
+  <h1>JEE 2025 Exam Eligibility Criteria</h1>
+  <p>
+    The <a href="#">eligibility criteria for JEE Main 2025</a> and 
+    <a href="#">JEE Advanced 2025</a> are outlined below. 
+    Candidates must meet specific requirements related to education, age, 
+    and other eligibility criteria for JEE Main 2025 and JEE Advanced 2025.
+  </p>
+
+  <!-- JEE Main 2025 -->
+  <h2>JEE Main 2025 Exam Eligibility Criteria</h2>
+  <p>
+    Candidates must meet specific requirements to appear for JEE Main 2025:
+  </p>
+  <table class="eligibility-table">
+    <thead>
+      <tr>
+        <th>Criteria</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Educational Qualification</td>
+        <td>Must have completed Class 12 or an equivalent examination conducted by a recognized board/institution.</td>
+      </tr>
+      <tr>
+        <td>Year of Passing</td>
+        <td>Candidates who passed Class 12 in 2023, are appearing in 2024, or took a drop year in 2024 can apply.</td>
+      </tr>
+      <tr>
+        <td>Subjects Required</td>
+        <td>Must have Physics, Chemistry, and Mathematics/Biology/Technical Vocational Subject. For B.Arch: Mathematics is mandatory.</td>
+      </tr>
+      <tr>
+        <td>Percentage of Marks</td>
+        <td>
+          General category: Minimum 75% marks or top 20 percentile in the respective board.<br>
+          SC/ST category: Minimum 65% marks.
+        </td>
+      </tr>
+      <tr>
+        <td>Age Limit</td>
+        <td>No upper age limit for JEE Main.</td>
+      </tr>
+      <tr>
+        <td>Number of Attempts</td>
+        <td>No limit on attempts after completing Class 12.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- JEE Advanced 2025 -->
+  <h2>JEE Advanced 2025 Exam Eligibility Criteria</h2>
+  <p>
+    Candidates must meet specific requirements to appear for JEE Advanced 2025:
+  </p>
+  <table class="eligibility-table">
+    <thead>
+      <tr>
+        <th>Criteria</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Performance in JEE Main</td>
+        <td>Must be among the top 2,50,000 successful candidates in the B.E./B.Tech (Paper 1) of JEE Main 2025.</td>
+      </tr>
+      <tr>
+        <td>Category-Wise Distribution</td>
+        <td>
+          GEN-EWS: 10%, OBC-NCL: 27%, SC: 15%, ST: 7.5%, OPEN: 40.5%.<br>
+          5% horizontal reservation for PwD across all categories.
+        </td>
+      </tr>
+      <tr>
+        <td>Age Limit</td>
+        <td>
+          Born on or after October 1, 2000.<br>
+          SC/ST/PwD: Born on or after October 1, 1995 (5-year relaxation).
+        </td>
+      </tr>
+      <tr>
+        <td>Number of Attempts</td>
+        <td>Maximum of two attempts in two consecutive years.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<!-- JEE 2025 Syllabus Section -->
+<section class="jee-syllabus-section">
+  <h1>JEE 2025 Syllabus</h1>
+
+  <!-- JEE Main 2025 Syllabus -->
+  <div class="table-wrapper">
+    <h2>JEE Main 2025 Syllabus</h2>
+    <table class="syllabus-table">
+      <thead>
+        <tr>
+          <th>Mathematics</th>
+          <th>Physics</th>
+          <th>Chemistry</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sets, Relations, and Functions</td>
+          <td>Physics and Measurement</td>
+          <td>Some Basic Concepts in Chemistry</td>
+        </tr>
+        <tr>
+          <td>Complex Numbers and Quadratic Equations</td>
+          <td>Kinematics</td>
+          <td>Atomic Structure</td>
+        </tr>
+        <tr>
+          <td>Matrices and Determinants</td>
+          <td>Laws of Motion</td>
+          <td>Chemical Bonding and Molecular Structure</td>
+        </tr>
+        <tr>
+          <td>Permutation and Combination</td>
+          <td>Work, Energy, and Power</td>
+          <td>Chemical Thermodynamics</td>
+        </tr>
+        <tr>
+          <td>Binomial Theorem and Its Applications</td>
+          <td>Rotational Motion</td>
+          <td>Solutions</td>
+        </tr>
+        <tr>
+          <td>Sequence and Series</td>
+          <td>Gravitation</td>
+          <td>Equilibrium</td>
+        </tr>
+        <tr>
+          <td>Limit, Continuity, and Differentiability</td>
+          <td>Properties of Solids and Liquids</td>
+          <td>Redox Reactions and Electrochemistry</td>
+        </tr>
+        <tr>
+          <td>Integral Calculus</td>
+          <td>Thermodynamics</td>
+          <td>Chemical Kinetics</td>
+        </tr>
+        <tr>
+          <td>Differential Equations</td>
+          <td>Kinetic Theory of Gases</td>
+          <td>Classification of Elements and Periodicity</td>
+        </tr>
+        <tr>
+          <td>Coordinate Geometry</td>
+          <td>Oscillation and Waves</td>
+          <td>p-block elements</td>
+        </tr>
+        <tr>
+          <td>Three-Dimensional Geometry</td>
+          <td>Electrostatics</td>
+          <td>d- and f-block elements</td>
+        </tr>
+        <tr>
+          <td>Vector Algebra</td>
+          <td>Current Electricity</td>
+          <td>Coordination Compounds</td>
+        </tr>
+        <tr>
+          <td>Statistics and Probability</td>
+          <td>Magnetic Effect of Current and Magnetism</td>
+          <td>Purification and Characterization of Organic Compounds</td>
+        </tr>
+        <tr>
+          <td>Trigonometry</td>
+          <td>Electromagnetic Induction and Alternating Current<br>Electromagnetic Waves<br>Optics</td>
+          <td>Some Basic Principles of Organic Chemistry<br>Hydrocarbons</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- JEE Advanced 2025 Syllabus -->
+  <div class="table-wrapper">
+    <h2>JEE Advanced 2025 Syllabus</h2>
+    <table class="syllabus-table">
+      <thead>
+        <tr>
+          <th>Mathematics</th>
+          <th>Physics</th>
+          <th>Chemistry</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sets, Relations and Functions</td>
+          <td>Units, Measurements and Dimensional Analysis</td>
+          <td>Basic Concepts in Chemistry</td>
+        </tr>
+        <tr>
+          <td>Complex Numbers and Quadratic Equations</td>
+          <td>Mechanics: Kinematics, Laws of Motion, Work, Energy and Power</td>
+          <td>Atomic Structure and Periodic Table</td>
+        </tr>
+        <tr>
+          <td>Matrices and Determinants</td>
+          <td>Rotational Motion and Gravitation</td>
+          <td>Chemical Bonding and Molecular Structure</td>
+        </tr>
+        <tr>
+          <td>Algebraic Equations and Inequalities</td>
+          <td>Thermodynamics</td>
+          <td>Chemical Thermodynamics and Equilibrium</td>
+        </tr>
+        <tr>
+          <td>Sequence and Series</td>
+          <td>Oscillations and Waves</td>
+          <td>Redox Reactions and Electrochemistry</td>
+        </tr>
+        <tr>
+          <td>Limit, Continuity and Differentiability</td>
+          <td>Electrostatics and Current Electricity</td>
+          <td>Chemical Kinetics and Surface Chemistry</td>
+        </tr>
+        <tr>
+          <td>Differential and Integral Calculus</td>
+          <td>Magnetic Effects and Electromagnetic Induction</td>
+          <td>Organic Chemistry: Hydrocarbons, Alcohols, Carbonyl Compounds</td>
+        </tr>
+        <tr>
+          <td>Coordinate and Three-Dimensional Geometry</td>
+          <td>Modern Physics: Photoelectric Effect, Atomic Nucleus, Radioactivity</td>
+          <td>Organic Chemistry: Reactions and Functional Groups</td>
+        </tr>
+        <tr>
+          <td>Vector Algebra and Trigonometry</td>
+          <td>Optics</td>
+          <td>Inorganic Chemistry: p-block, d- and f-block elements<br>Coordination Compounds</td>
+        </tr>
+        <tr>
+          <td>Probability and Statistics</td>
+          <td>Fluid Mechanics and Properties of Matter</td>
+          <td>Environmental Chemistry</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="exam-dates">
+  
+  <h2>JEE Main 2025 EXAM DATES</h2>
+  <div class="table-container">
+    <table class="narrow-table">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Start of Registration</td>
+          <td>October 28, 2024</td>
+        </tr>
+        <tr>
+          <td>Last Date to Apply</td>
+          <td>November 22, 2024</td>
+        </tr>
+        <tr>
+          <td>Exam Dates</td>
+          <td>
+            Session 1: Jan 22, 23, 24, 28, 29, 30, 2025<br>
+            Session 2: Apr 1–8, 2025
+          </td>
+        </tr>
+        <tr>
+          <td>Admit Card Release</td>
+          <td>January 18, 2025</td>
+        </tr>
+        <tr>
+          <td>Result Declaration</td>
+          <td>
+            Session 1: February 12, 2025<br>
+            Session 2: May 2025
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>JEE Advanced 2025 EXAM DATES</h2>
+  <div class="table-container">
+    <table class="narrow-table">
+      <thead>
+        <tr>
+          <th>Activity</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Online Registration</td>
+          <td>April 23, 2025</td>
+        </tr>
+        <tr>
+          <td>Admit Card Download</td>
+          <td>May 2, 2025</td>
+        </tr>
+        <tr>
+          <td>Exam Date</td>
+          <td>May 18, 2025</td>
+        </tr>
+        <tr>
+          <td>Candidate Response Sheet</td>
+          <td>May 22, 2025</td>
+        </tr>
+        <tr>
+          <td>Provisional Answer Key</td>
+          <td>May 26, 2025</td>
+        </tr>
+        <tr>
+          <td>Answer Key Challenge Window</td>
+          <td>May 26–27, 2025</td>
+        </tr>
+        <tr>
+          <td>Final Answer Key &amp; Result</td>
+          <td>June 2, 2025</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="jee-preparation-tips">
+  <h2>JEE 2025 Preparation Tips for Main and Advanced</h2>
+  <p>Preparing for JEE 2025 requires a disciplined and structured approach. Here are some preparation tips for JEE 2025 exam that you can use to strengthen your exam preparation:</p>
+  <ul>
+    <li><strong>Understand the Exam Pattern and Syllabus:</strong> Familiarize yourself with the structure, marking scheme, and important topics.</li>
+    <li><strong>Create a Study Schedule:</strong> Develop a realistic timetable that covers all subjects and allows time for revision.</li>
+    <li><strong>Focus on Conceptual Clarity:</strong> Strengthen fundamental concepts across Physics, Chemistry, and Mathematics.</li>
+    <li><strong>Use NCERT Books:</strong> Start with NCERT for a strong foundation before moving to advanced reference books.</li>
+    <li><strong>Practice Daily:</strong> Regular problem-solving is essential to develop speed and accuracy.</li>
+    <li><strong>Take Mock Tests:</strong> Simulate exam conditions to build confidence and improve time management.</li>
+    <li><strong>Analyze Weak Areas:</strong> Regularly review performance in tests and focus on improving weaker sections.</li>
+    <li><strong>Revise Consistently:</strong> Keep revisiting important formulas, reactions, and concepts.</li>
+    <li><strong>Solve Previous Year Papers:</strong> Practice with previous papers to understand question trends and difficulty levels.</li>
+    <li><strong>Seek Guidance When Needed:</strong> Don’t hesitate to ask teachers or peers for help with challenging topics.</li>
+  </ul>
+</section>
+
+<section class="jee-pyq-section">
+  <h2>JEE MAINS SAMPLE PAPERS</h2>
+  <div class="pdf-grid">
+    <a href="pdfs/JEE MAINS 1.pdf" class="pdf-link" target="_blank">SAMPLE PAPER 1</a>
+    <a href="pdfs/JEE MAINS 2.pdf" class="pdf-link" target="_blank">SAMPLE PAPER 2</a>
+    <a href="pdfs/JEE MAINS 3.pdf" class="pdf-link" target="_blank">SAMPLE PAPER 3</a>
+    <a href="pdfs/JEE MAINS 4.pdf" class="pdf-link" target="_blank">SAMPLE PAPER 4</a>
+  </div>
+</section>
+
+<section class="jee-pyq-section">
+  <h2>JEE AdVANCED SAMPLE PAPERS</h2>
+  <div class="pdf-grid">
+    <a href="pdfs/jee advanced 1.pdf" class="pdf-link" target="_blank">SAMPLE PAPER 1</a>
+    <a href="pdfs/jee advanced 2.pdf" class="pdf-link" target="_blank">SAMPLE PAPER 2</a>
+    <a href="pdfs/jee advanced 3..pdf" class="pdf-link" target="_blank">SAMPLE PAPER 3</a>
+    <a href="pdfs/JEE MAINS 4.pdf" class="pdf-link" target="_blank">SAMPLE PAPER 4</a>
+  </div>
+</section>
+<div class="jee-intro-section">
+  <p>
+    While observing the latest developments in IIT JEE including the Examination Mode, pattern and other changes, we at EDUsphere have come with a comprehensive JEE preparation course for aspirants who are planning to appear for the national level entrance exam. We are offering an exhaustive set of solutions, study materials, close mentoring and more to help each student make the most of their study time and prepare effectively for the exam especially from the comforts of their homes.
+  </p>
+
+  <p>
+    IIT JEE (Joint Entrance Exam) is one of the most popular engineering entrance examinations conducted in India. More significantly, JEE is the most-recognised competitive exam and probably the only way for aspirants to land a
+  </p>
+</div>
+<!-- Footer -->
+<footer style="background: #4d9fb3; color: #fff; padding: 40px 20px; text-align: center; margin-top: 50px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 30px;">
+    <div style="flex: 1; min-width: 220px;">
+      <h3 style="margin-bottom: 10px;">EDUsphere</h3>
+      <p style="font-size: 0.9em;">Empowering Students for Success</p>
+    </div>
+    <div style="flex: 1; min-width: 220px;">
+      <h4 style="margin-bottom: 10px;">Quick Links</h4>
+      <p><a href="aboutus.html" style="color: #fff; text-decoration: none;">About Us</a></p>
+      <p><a href="courses.html" style="color: #fff; text-decoration: none;">Courses</a></p>
+      <p><a href="courses.html" style="color: #fff; text-decoration: none;">Contact Us</a></p>
+    </div>
+    <div style="flex: 1; min-width: 220px;">
+      <h4 style="margin-bottom: 10px;">Contact Us</h4>
+      <p style="font-size: 0.9em;">Phone: 8077924938</p>
+      <p style="font-size: 0.9em;">Email: kritikaj147@gmail.com</p>
+    </div>
+  </div>
+  <hr style="margin: 30px auto; width: 90%; border-color: rgba(255,255,255,0.2);">
+  <p style="font-size: 0.8em;">© 2025 EDUsphere. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

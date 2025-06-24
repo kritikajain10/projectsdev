@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT US</title>
+</head>
+<style>
+    /* General Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #f9f9f9;
+}
+
+h1, h2, h3 {
+  color: #007b7b;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.container {
+  width: 50%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  padding: 10px 20px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 20px;
+  color: #555;
+}
+
+/* About Section */
+.about {
+  background: #ffffff;
+  text-align: center;
+}
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.about p {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Offer Section */
+.offer {
+  background: #e0f7f4;
+  text-align: center;
+}
+.offer h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+.offer-item {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.offer-item:hover {
+  transform: translateY(-8px);
+}
+.offer-item h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+.offer-item p {
+  color: #666;
+}
+
+/* Why Choose Us */
+.why-choose {
+  background: #ffffff;
+}
+.why-choose h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.why-choose ul {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: auto;
+}
+.why-choose ul li {
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+}
+.why-choose ul li::before {
+  content: '✔️';
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #e0f7f4;
+  font-size: 14px;
+  color: #666;
+}
+ /* Responsive Styles */
+    /* Tablet & Laptop (<=1024px) */
+    @media (max-width: 1024px) {
+      .container {
+        width: 80%;
+        padding: 30px 0;
+      }
+      .hero {
+        padding: 30px 15px;
+      }
+      .hero h1 {
+        font-size: 36px;
+      }
+      .hero p {
+        font-size: 18px;
+      }
+      .offer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      .offer-item {
+        padding: 20px;
+      }
+      .why-choose ul li {
+        font-size: 16px;
+        padding-left: 20px;
+      }
+    }
+
+    /* Mobile (<=600px) */
+    @media (max-width: 600px) {
+      .container {
+        width: 100%;
+        padding: 20px 10px;
+      }
+      .hero {
+        padding: 20px 10px;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      .hero-img {
+        width: 150px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      .about h2, .offer h2, .why-choose h2 {
+        font-size: 28px;
+      }
+      .offer-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      .offer-item {
+        padding: 15px;
+      }
+      .offer-item h3 {
+        font-size: 18px;
+      }
+      .why-choose ul li {
+        font-size: 14px;
+        padding-left: 18px;
+      }
+      .footer {
+        font-size: 12px;
+        padding: 15px 10px;
+      }
+    }
+
+</style>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>About EDUsphere</h1>
+        <img src="pictures/open book.webp" width="200px" class="hero-img">
+        <p>Empowering Students for a Brighter Future</p>
+      </div>
+    </section>
+    
+    <!-- Who We Are -->
+    <section class="about">
+      <div class="container">
+        <h2>Who We Are</h2>
+        <p>
+          At EDUsphere, we are committed to nurturing the next generation of achievers. We specialize in preparing students for Class 11 and 12 PCM, JEE Mains and Advanced, NEET, and Web Development programs. 
+          Our mission is to offer high-quality education, hands-on practice, and the right career guidance to every student.
+        </p>
+      </div>
+    </section>
+    
+    <!-- What We Offer -->
+    <section class="offer">
+      <div class="container">
+        <h2>What We Offer</h2>
+        <div class="offer-grid">
+          <div class="offer-item">
+            <h3>JEE & NEET Preparation</h3>
+            <p>Expert faculty, detailed notes, assignments, and sample papers to crack top exams with confidence.</p>
+          </div>
+          <div class="offer-item">
+            <h3>Web Development</h3>
+            <p>Learn frontend and backend technologies like HTML, CSS, React.js, Node.js, and build real-world projects.</p>
+          </div>
+          <div class="offer-item">
+            <h3>Scholarships & Free Trials</h3>
+            <p>Financial aid and free trial classes to ensure every deserving student gets a chance to learn.</p>
+          </div>
+          <div class="offer-item">
+            <h3>Offline Centres</h3>
+            <p>Join our offline centers at Dehradun, Delhi, Rishikesh, Noida, and Bangalore for face-to-face mentoring.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+      <div class="container">
+        <h2>Why Choose EDUsphere?</h2>
+        <ul>
+          <li>Experienced Faculty from IITs and Top Institutions</li>
+          <li>Comprehensive Assignments and Sample Papers</li>
+          <li>Personalized Doubt Sessions</li>
+          <li>Career Counseling & Mentoring</li>
+          <li>Modern Coding Labs for Developers</li>
+          <li>Community of Aspiring Achievers</li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 EDUsphere. All Rights Reserved.</p>
+    </footer>
+    
+    </body>
+    </html>
+      
+</body>
+</html>
