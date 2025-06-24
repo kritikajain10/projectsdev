@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESOST Scholarship Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-section {
+            width: 60%;
+        }
+
+        .left-section h1 {
+            color: #0052A0;
+        }
+
+        .left-section p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .icon-text {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .icon-text img {
+            width: 24px;
+            margin-right: 10px;
+        }
+
+        .benefits {
+            margin-top: 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .right-section {
+            width: 35%;
+            padding: 20px;
+            background: #fdfdfd;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-section h2 {
+            text-align: center;
+            color: #187999;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .register-btn {
+            width: 100%;
+            background: #0052A0;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .register-btn:hover {
+            background: #084888;
+        }
+
+        .success-message {
+            display: none;
+            background: #a9711d;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+/* Tablet & small-laptop screens */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+  .left-section {
+    margin-bottom: 30px;
+  }
+  .banner-image img {
+    width: 300px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  .scholarship-banner {
+    padding: 20px 10px;
+  }
+  .container {
+    padding: 10px;
+  }
+  .left-section h1 {
+    font-size: 1.5rem;
+  }
+  .left-section p {
+    font-size: 14px;
+  }
+  .icon-text img {
+    width: 20px;
+    margin-right: 8px;
+  }
+  .benefit-item img {
+    width: 30px;
+    margin-right: 8px;
+  }
+  .right-section {
+    padding: 15px;
+  }
+  label {
+    font-size: 0.9rem;
+  }
+  input, select {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .register-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .success-message {
+    font-size: 0.9rem;
+  }
+}
+
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <h1>Win up to 90% Scholarship with ESOST!</h1>
+
+            <div class="icon-text">
+                <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Scholarship">
+                <p>Get Scholarships on <b>EDUSPHERE Online LIVE Courses</b> for JEE AND NEET.</p>
+            </div>
+
+            <div class="icon-text">
+                <img src="https://cdn-icons-png.flaticon.com/512/2088/2088617.png" alt="Clock">
+                <p><b>1-Hour Test | Sunday, 12:00 PM - 1:00 PM</b></p>
+            </div>
+
+            <div class="benefits">
+                <h2>Benefits of EDUSPHERE Online Scholarship Test (ESOST)</h2>
+
+                <div class="benefit-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1157/1157109.png" alt="Scholarship">
+                    <p><b>Massive Scholarships:</b> Win up to 90% instant scholarship on EDUSPHERE's Online LIVE Courses.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2920/2920223.png" alt="Online Test">
+                    <p><b>Easy Test Process:</b> The test can be taken online from anywhere, on your mobile/tab/desktop.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section (Form) -->
+        <div class="right-section">
+            <h2>Register for ESOST</h2>
+
+            <label>Student's Full Name*</label>
+            <input type="text" id="fullName" placeholder="Ex: kritika jain">
+
+            <label>Mobile Number*</label>
+            <input type="text" id="mobileNumber" placeholder="Ex: 8077924938">
+
+            <label>Test Slot (12:00 PM - 1:00 PM)*</label>
+            <select id="testSlot">
+                <option>30th may</option>
+                <option>06th june</option>
+            </select>
+
+            <label>State*</label>
+            <select id="state">
+                <option>Andhra Pradesh</option>
+                <option>Arunachal Pradesh</option>
+                <option>Assam</option>
+                <option>Bihar</option>
+                <option>Chhattisgarh</option>
+                <option>Goa</option>
+                <option>Gujarat</option>
+                <option>Haryana</option>
+                <option>Himachal Pradesh</option>
+                <option>Jharkhand</option>
+                <option>Karnataka</option>
+                <option>Kerala</option>
+                <option>Madhya Pradesh</option>
+                <option>Maharashtra</option>
+                <option>Manipur</option>
+                <option>Meghalaya</option>
+                <option>Mizoram</option>
+                <option>Nagaland</option>
+                <option>Odisha</option>
+                <option>Punjab</option>
+                <option>Rajasthan</option>
+                <option>Sikkim</option>
+                <option>Tamil Nadu</option>
+                <option>Telangana</option>
+                <option>Tripura</option>
+                <option>Uttar Pradesh</option>
+                <option>Uttarakhand</option>
+                <option>West Bengal</option>
+            </select>
+
+            <button class="register-btn" onclick="registerUser()">Register Now</button>
+
+            <div class="success-message" id="successMessage">
+                ✅ Registration Successful! We'll contact you soon.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function registerUser() {
+            const fullName = document.getElementById("fullName").value;
+            const mobileNumber = document.getElementById("mobileNumber").value;
+
+            if (fullName.trim() === "" || mobileNumber.trim() === "") {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            document.getElementById("successMessage").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
+
